@@ -16,11 +16,11 @@ Encoders take a `tao` argument and decoders follow `transfer->tao`, so the same 
 - DSDL `b4653c7abc3c47cb31b16efa24ea755232774756`, newer than ArduPilot's submodule, adds the RCInput `QUALITY_TYPE` constants
 - dronecan_dsdlc `de47a8972b7d8c59e50c3acfab5754db29798caa`
 
-Local headers use quoted includes, so they resolve from this library's folder.
+Include them as `"dsdl/<type>.h"`. Their own includes are quoted, so they resolve from that folder.
 
 ## Regenerating
 
-`tools/regenerate.sh` clones both at those commits into a scratch folder, runs the generator and refreshes the files already in `src/`. To add a message, copy its `.c`/`.h` and those of the types it depends on into `src/` first.
+`tools/regenerate.sh` clones both at those commits into a scratch folder, runs the generator and refreshes the files already in `src/dsdl/`. To add a message, copy its `.c`/`.h` and those of the types it depends on into `src/dsdl/` first.
 
 ## PlatformIO
 
